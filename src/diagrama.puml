@@ -1,0 +1,108 @@
+@startuml
+
+'-- ASPECTO VISUAL
+skinparam shadowing true
+skinparam roundCorner 20
+skinparam classBorderColor Black
+skinparam classBorderThickness 2
+
+
+'-- CLASES
+
+class CasinoJava {
+ - name : String
+ - {static} credit : double
+ - {static} matchCredit : double
+ - dni : String
+ - age : int
+ - sc : Scanner
+ + CasinoJava()
+ + selectGame()
+ + setData()
+ + setMatchCredit()
+ + getMatchCredit()
+ + otherMatchConfirmation()
+}
+
+class Slot {
+ - MoneyBet : int
+ - SlotChips : enum
+ - {static} {readOnly} SlotsNumbers : int
+ - {static} {readOnly} PRICE : int
+ - {static} {readOnly} ale : Random
+ - {readOnly} sc: Scanner
+ + Slot()
+ + spin()
+ + comprobation()
+ + exitMatch()
+}
+
+class MoneyMovement {
+ - retiredMoney : int
+ - introducedMoney : int
+ - exit : boolean
+ - {static} sc : Scanner
+ + MoneyMovement()
+ + withDrawMoney()
+ + introduceMoney()
+}
+
+class HangmanCasino {
+ - {static} {readOnly} CONSONANTS : String[]
+ - {static} {readOnly} VOWELS : String[]
+ - {static} {readOnly} GENERATOR : int[]
+ - word : String
+ - censoredWord : StringBuilder
+ - {static} {readOnly} sc : Scanner
+ + HangmanCasino()
+ + generateWord()
+ + getWord()
+ + censorWord()
+ + getCensoredWord()
+ + playGame()
+}
+
+class CasinoRoulette {
+ - moneyQuanty : int[][]
+ - hotNumbers : int[]
+ - winningNumber : int
+ - {static} {readOnly} ale : Random
+ - {static} {readOnly} sc: Scanner
+ + CasinoRoulette()
+ + setNumerosMetidos()
+ - repeatedNumbers()
+ + setBet()
+ + getBet()
+ + setHotNumbers()
+ + getHotNumbers()
+ + tirada()
+}
+
+class BlackJack {
+ - results : enum
+ - crupierCards : int
+ - crupierUser : int
+ - {static} {readoOnly} MULTIPLIER : int
+ - {static} {readoOnly} OBJECTIVE : int
+ - {readOnly} ale : Random
+ + BlackJack()
+ + pickCards()
+ + gameOver()
+ - result()
+
+
+}
+
+class Launch {
+  + main()
+}
+
+'-- RELACIONES
+
+ CasinoJava <|-- Slot
+ CasinoJava <|-- HangmanCasino
+ CasinoJava <|-- MoneyMovement
+ CasinoJava <|-- CasinoRoulette
+ CasinoJava <|-- BlackJack
+
+@enduml
