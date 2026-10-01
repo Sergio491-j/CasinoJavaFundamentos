@@ -1,1 +1,1 @@
-Hola! Este es mi primer repositorio subido desde IntelliJ IDEA!
+Proyecto de Java puro ejecutado en terminal, necesita el driver de MySQL y ejecutarse el script .sql para crear la BBDD. Es un proyecto académico de primero de DAW. 
